@@ -8,7 +8,7 @@ class Bravoure extends Controller
     public function index()
     {
 
-        $artists = Artist::find(1)->get();
+        $artists = Artist::all();
 
         return view('bravoure_index',
             [

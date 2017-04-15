@@ -1,14 +1,12 @@
 {{--Head Content--}}
 
-<title>Copiadora Montes Claros</title>
+    <title>Bravoure</title>
 
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="Copiadora Montes Claros é a mais tradicional copiadora da cidade.
-    Cópias, plastificação, encadernação, reforma de livros e documentos, envio de fax, impressão e digitalização
-    de documentos.">
+<meta name="description" content="Bravoure">
 
 <link rel="shortcut icon" href="images/bravoure.png" />
 
