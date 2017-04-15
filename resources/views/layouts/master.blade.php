@@ -29,12 +29,10 @@
         background-repeat: no-repeat;
         max-width: 905px;
         max-height: 709px;
-        min-width: 100%;
-        min-height: 100%;
     }
 
     .company_name {
-        font-size: 20vmax;
+        font-size: 20vw;
         color: #F4A0A0;
         float: right;
         padding-top: 187px;
