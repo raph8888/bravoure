@@ -34,7 +34,7 @@
     }
 
     .company_name {
-        font-size: 20vmax;
+        font-size: 20vw;
         color: #F4A0A0;
         float: right;
         padding-top: 187px;
