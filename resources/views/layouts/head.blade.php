@@ -10,7 +10,7 @@
     Cópias, plastificação, encadernação, reforma de livros e documentos, envio de fax, impressão e digitalização
     de documentos.">
 
-<link rel="shortcut icon" href="images/Bravoure-logo-800x450.png" />
+<link rel="shortcut icon" href="images/bravoure.png" />
 
 {{--Jquery CDN--}}
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-alpha1/jquery.min.js"></script>

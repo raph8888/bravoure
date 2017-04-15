@@ -1,15 +1,19 @@
 <?php
 namespace App\Http\Controllers;
 use Illuminate\Http\Request;
+use App\Artist;
+
 class Bravoure extends Controller
 {
-    /**
-     * Show the application dashboard.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function index()
     {
-        return view('bravoure_index');
+
+        $artists = Artist::find(1)->get();
+
+        return view('bravoure_index',
+            [
+                'artists' => $artists
+            ]
+        );
     }
 }
