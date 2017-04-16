@@ -7,6 +7,18 @@
         {{--Desktop row--}}
         <div class="row desktop-view">
 
+            <div class="desktop-links">
+
+
+                <a href={{url('/bravoure')}}><span class="b-link inline-link">B</span></a>
+                <a href={{url('/bravoure')}}><span class="events-link inline-link">Events</span></a>
+                <a href={{url('/bravoure')}}><span class="info-link inline-link">Info</span></a>
+                <a href={{url('/bravoure')}}><span class="contact-link inline-link">Contact</span></a>
+                <a href={{url('/bravoure')}}><span class="tickets-link inline-link float-right-link">Tickets</span></a>
+
+
+            </div>
+
             <div class="col-sm-12 col-sm-6 col-md-8 col-lg-7 padding-left-0">
                 <div class="menu_background">
                 </div>
@@ -17,8 +29,10 @@
             <div class="col-sm-12 col-sm-6 col-md-4 col-lg-5">
                 <div class="menu_description">
 
-                    <p>The xx is een driekoppige Engelse indieband, gevrmd in Wandsworth, Londen in 2005. De drie brachten
-                        hun debuutalbum, xx, uit in augustus 2009. Het kwam op de eerste plaats van de "best of 2009"-lijst
+                    <p>The xx is een driekoppige Engelse indieband, gevrmd in Wandsworth, Londen in 2005. De drie
+                        brachten
+                        hun debuutalbum, xx, uit in augustus 2009. Het kwam op de eerste plaats van de "best of
+                        2009"-lijst
                         van The Guardian en op de tweede op die van NME.</p>
 
                 </div>
@@ -27,10 +41,20 @@
         </div>
 
 
+        {{--Mobile row--}}
 
-{{--Mobile row--}}
 
         <div class="row mobile-view">
+
+            <div class="mobile-icons">
+
+
+                <a href={{url('/bravoure')}}><span class="mobile-b-icon">B</span></a>
+                <a href={{url('/bravoure')}}><span class="mobile_menu_icon"><img class="menu_icon_img" src="images/menu-icon.png" width="20px"/></span></a>
+
+
+            </div>
+
 
             <div class="mobile_background_col col-sm-12 col-sm-12 col-md-12 col-lg-12 padding-left-20">
                 <div class="menu_background_mobile">
@@ -42,8 +66,10 @@
             <div class="col-sm-12 col-sm-12 col-md-12 col-lg-12">
                 <div class="padding_left_20 menu_description_mobile">
 
-                    <p>The xx is een driekoppige Engelse indieband, gevrmd in Wandsworth, Londen in 2005. De drie brachten hun
-                        debuutalbum, xx, uit in augustus 2009. Het kwam op de eerste plaats van de "best of 2009"-lijst van The
+                    <p>The xx is een driekoppige Engelse indieband, gevormd in Wandsworth, Londen in 2005. De drie
+                        brachten hun
+                        debuutalbum, xx, uit in augustus 2009. Het kwam op de eerste plaats van de "best of 2009"-lijst
+                        van The
                         Guardian en op de tweede op die van NME.</p>
 
 
@@ -51,10 +77,6 @@
             </div>
 
         </div>
-        
-        
-        
-
 
 
     </div>
@@ -101,6 +123,37 @@
 
     @media screen and (min-width: 700px) {
 
+        .mobile-view {
+            display: none;
+        }
+
+        a {
+            color: white !important;
+            text-decoration: none;
+        }
+
+
+        .desktop-links {
+            position: absolute;
+            z-index: 5;
+            color: #FFF;
+            width: 100%;
+            margin-top: 15px;
+            font-size: 22px;
+            padding-left: 46px;
+        }
+
+        .inline-link {
+            display: inline;
+            padding-right: 43px;
+        }
+
+        .tickets-link {
+            float: right;
+            color: black;
+            padding-right: 35px;
+        }
+
         .menu_description {
             max-width: 300px;
             display: block;
@@ -141,61 +194,89 @@
         .padding_media {
             padding-left: 15px;
         }
-        
-        .mobile-view {
-            display: none;
-        }
 
     }
 
-        /*
-        ** Mobile View
-        ** This takes effect until the screen reaches above 1100px
-        */
-        @media screen and (max-width: 700px) {
+    /*
+    ** Mobile View
+    ** This takes effect until the screen reaches above 1100px
+    */
+    @media screen and (max-width: 700px) {
 
-            .mobile_background_col {
+        .menu_icon_img {
+            padding-top: 18px;
+            width: 28px;
+        }
+
+        .desktop-view {
+            display: none;
+        }
+
+        .mobile-b-icon {
+            font-size: 31px;
+            color: black;
+            margin: 20px 14px;
+            position: absolute;
+        }
+        
+        .mobile-icons {
+            position: absolute;
+            width: 100%;
+            z-index: 1;
+        }
+
+        .mobile_menu_icon {
+            margin: 20px;
+            display: block;
+            height: 50px;
+            width: 50px;
+            float: right;
+            -moz-border-radius: 30px; /* or 50% */
+            border-radius: 30px; /* or 50% */
+            background-color: white;
+            color: white;
+            text-align: center;
+            font-size: 2em;
+        }
+
+        .mobile_background_col {
             padding-right: 0px !important;
             padding-left: 52px !important;
         }
 
-            .company_name_mobile {
-                color: #F4A0A0;
-                position: absolute;
-                top: 25vh;
-                left: 2vh;
-                font-size: 14vh;
-            }
-
-            .menu_background_mobile {
-                background-image: url(images/menu_background_mobile.png);
-                background-size: 100%;
-                background-repeat: no-repeat;
-                width: 100%;
-                height: 71%;            }
-
-            .desktop-view {
-                display: none;
-            }
-
-            .menu_description {
-                display: none;
-            }
-
-            .menu_description_mobile {
-                padding-top: 20px;
-                width: 90%;
-                position: relative;
-            }
-            .padding_media {
-                padding-left: 40px;
-            }
-            .padding_left_40{
-                padding-left:40px !important;
-            }
-            .padding_left_20{
-                padding-left:20px !important;
-            }
+        .company_name_mobile {
+            color: #F4A0A0;
+            position: absolute;
+            top: 25vh;
+            left: 2vh;
+            font-size: 14vh;
         }
+
+        .menu_background_mobile {
+            background-image: url(images/menu_background_mobile.png);
+            background-size: 100%;
+            background-repeat: no-repeat;
+            width: 100%;
+            height: 71%;
+        }
+
+        .menu_description_mobile {
+            padding-top: 20px;
+            width: 90%;
+            position: relative;
+        }
+
+        .padding_media {
+            padding-left: 40px;
+        }
+
+        .padding_left_40 {
+            padding-left: 40px !important;
+        }
+
+        .padding_left_20 {
+            padding-left: 20px !important;
+        }
+    }
 
 </style>
