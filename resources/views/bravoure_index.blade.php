@@ -133,10 +133,10 @@
 
     /*
     ** Deskot View
-    ** This takes effect until the screen reaches below 1100px
+    ** This takes effect until the screen reaches below 900px
     */
 
-    @media screen and (min-width: 700px) {
+    @media screen and (min-width: 900px) {
 
         .mobile-view {
             display: none;
@@ -213,9 +213,9 @@
 
     /*
     ** Mobile View
-    ** This takes effect until the screen reaches above 1100px
+    ** This takes effect until the screen reaches above 900px
     */
-    @media screen and (max-width: 700px) {
+    @media screen and (max-width: 900px) {
 
         .menu_icon_img {
             padding-top: 18px;
