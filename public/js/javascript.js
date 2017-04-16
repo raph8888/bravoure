@@ -1,7 +1,7 @@
 $(document).ready(function () {
     // This WILL work because we are listening on the 'document',
     // for a click on an element with an ID of #test-element
-    $(document).on("click", ".menu_icon_img", function () {
+    $(document).on("click", ".mobile_menu_icon", function () {
         $(".overlay").toggle( "slow", function() {
             // Animation complete.
         });
