@@ -162,9 +162,9 @@
             .company_name_mobile {
                 color: #F4A0A0;
                 position: absolute;
-                top: 47vw;
-                left: 2vw;
-                font-size: 29vw;
+                top: 28vh;
+                left: 2vh;
+                font-size: 19vh;
             }
 
             .menu_background_mobile {
@@ -184,7 +184,7 @@
 
             .menu_description_mobile {
                 padding-top: 20px;
-                max-width: 357px;
+                width: 90%;
                 position: relative;
             }
             .padding_media {
