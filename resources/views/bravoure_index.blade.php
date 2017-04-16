@@ -162,9 +162,9 @@
             .company_name_mobile {
                 color: #F4A0A0;
                 position: absolute;
-                top: 28vh;
+                top: 25vh;
                 left: 2vh;
-                font-size: 19vh;
+                font-size: 14vh;
             }
 
             .menu_background_mobile {
