@@ -50,7 +50,8 @@
 
 
                 <a href={{url('/bravoure')}}><span class="mobile-b-icon">B</span></a>
-                <a href={{url('/bravoure')}}><span class="mobile_menu_icon"><img class="menu_icon_img" src="images/menu-icon.png" width="20px"/></span></a>
+                <span class="mobile_menu_icon"><img class="menu_icon_img" src="images/menu-icon.png"
+                                                    width="20px"/></span>
 
 
             </div>
@@ -74,6 +75,15 @@
 
 
                 </div>
+            </div>
+
+            <div class="overlay"></div>
+            <img class="menu_rectangle" src="images/rectangle_mobile_menu.png" width="20px"/>
+            <div class="menu_mobile_links_list">
+                <a href={{url('/bravoure')}}><span class="menu_mobile_link">Events</span></a><br>
+                <a href={{url('/bravoure')}}><span class="menu_mobile_link">Arstist</span></a><br>
+                <a href={{url('/bravoure')}}><span class="menu_mobile_link">Info</span></a><br>
+                <a href={{url('/bravoure')}}><span class="menu_mobile_link">Contact</span></a>
             </div>
 
         </div>
@@ -131,7 +141,6 @@
             color: white !important;
             text-decoration: none;
         }
-
 
         .desktop-links {
             position: absolute;
@@ -208,6 +217,39 @@
             width: 28px;
         }
 
+        .menu_rectangle {
+            display: none;
+            z-index: 100;
+            width: 60%;
+            position: fixed;
+            padding-top: 0px;
+            top: 0;
+            right: 0;
+        }
+
+        .menu_mobile_links_list {
+            display: none;
+            z-index: 200;
+            position: fixed;
+            top: 50px;
+            right: 68px;
+            font-size: 32px;
+            line-height: 62px;
+        }
+
+        .overlay {
+            display: none;
+            background-color: #000;
+            bottom: 0;
+            left: 0;
+            opacity: 0.6;
+            filter: alpha(opacity=50); /* IE7 & 8 */
+            position: fixed;
+            right: 0;
+            top: 0;
+            z-index: 99;
+        }
+
         .desktop-view {
             display: none;
         }
@@ -218,7 +260,7 @@
             margin: 20px 14px;
             position: absolute;
         }
-        
+
         .mobile-icons {
             position: absolute;
             width: 100%;
