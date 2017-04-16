@@ -126,6 +126,11 @@
         width: 100% !important;
     }
 
+
+    a:hover {
+        text-decoration-color: #F4A0A0 !important;
+    }
+
     /*
     ** Deskot View
     ** This takes effect until the screen reaches below 1100px
@@ -221,6 +226,7 @@
             display: none;
             z-index: 100;
             width: 60%;
+            height: 100%;
             position: fixed;
             padding-top: 0px;
             top: 0;
@@ -231,10 +237,15 @@
             display: none;
             z-index: 200;
             position: fixed;
-            top: 50px;
-            right: 68px;
-            font-size: 32px;
+            top: 44px;
+            right: 38px;
+            font-size: 36px;
             line-height: 62px;
+            text-align: right;
+        }
+
+        .menu_mobile_link {
+            color: black;
         }
 
         .overlay {
