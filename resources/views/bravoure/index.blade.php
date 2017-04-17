@@ -4,18 +4,17 @@
 
     <div class="container menu_container">
 
-        {{--Desktop row--}}
+        {{--Desktop View Starts--}}
+
         <div class="row desktop-view">
 
             <div class="desktop-links">
-
 
                 <a href={{url('/bravoure')}}><span class="b-link inline-link">B</span></a>
                 <a href={{url('/bravoure')}}><span class="events-link inline-link">Events</span></a>
                 <a href={{url('/bravoure')}}><span class="info-link inline-link">Info</span></a>
                 <a href={{url('/bravoure')}}><span class="contact-link inline-link">Contact</span></a>
                 <a href={{url('/bravoure')}}><span class="tickets-link inline-link float-right-link">Tickets</span></a>
-
 
             </div>
 
@@ -29,33 +28,32 @@
             <div class="col-sm-12 col-sm-6 col-md-4 col-lg-5">
                 <div class="menu_description">
 
-                    <p>The xx is een driekoppige Engelse indieband, gevrmd in Wandsworth, Londen in 2005. De drie
-                        brachten
-                        hun debuutalbum, xx, uit in augustus 2009. Het kwam op de eerste plaats van de "best of
-                        2009"-lijst
-                        van The Guardian en op de tweede op die van NME.</p>
+                    <p>The xx is een driekoppige Engelse indieband, gevormd in Wandsworth, Londen in 2005. De drie brachten hun debuutalbum, xx, uit in augustus 2009. Het kwam op de eerste plaats van de "best of 2009"-lijst van The Guardian en op de tweede op die van NME.</p>
 
                 </div>
             </div>
 
         </div>
 
+        {{--Desktop View Ends--}}
 
-        {{--Mobile row--}}
 
+        {{--Mobile View Starts--}}
 
         <div class="row mobile-view">
 
             <div class="mobile-icons">
 
+                <a href={{url('/bravoure')}}>
+                    <span class="mobile-b-icon">B</span>
+                </a>
 
-                <a href={{url('/bravoure')}}><span class="mobile-b-icon">B</span></a>
-                <span class="mobile_menu_icon"><img class="menu_icon_img" src="images/menu-icon.png"
-                                                    width="20px"/></span>
-
+                <span class="mobile_menu_icon">
+                    <img class="menu_icon_img" src="images/menu-icon.png"
+                                                    width="20px"/>
+                </span>
 
             </div>
-
 
             <div class="mobile_background_col col-sm-12 col-sm-12 col-md-12 col-lg-12 padding-left-20">
                 <div class="menu_background_mobile">
@@ -63,60 +61,24 @@
             </div>
             <span class="company_name_mobile">The XX</span>
 
-
             <div class="col-sm-12 col-sm-12 col-md-12 col-lg-12">
                 <div class="padding_left_20 menu_description_mobile">
 
-                    <p>The xx is een driekoppige Engelse indieband, gevormd in Wandsworth, Londen in 2005. De drie
-                        brachten hun
-                        debuutalbum, xx, uit in augustus 2009. Het kwam op de eerste plaats van de "best of 2009"-lijst
-                        van The
-                        Guardian en op de tweede op die van NME.</p>
-
-
-                </div>
-            </div>
-
-            <div class="overlay"></div>
-            <img class="menu_rectangle" src="images/rectangle_mobile_menu.png" width="20px"/>
-            <div class="menu_mobile_links_list">
-                <a href={{url('/bravoure')}}><span class="menu_mobile_link">Events</span></a><br>
-                <a href={{url('/bravoure')}}><span class="menu_mobile_link">Arstist</span></a><br>
-                <a href={{url('/bravoure')}}><span class="menu_mobile_link">Info</span></a><br>
-                <a href={{url('/bravoure')}}><span class="menu_mobile_link">Contact</span></a>
-            </div>
-
-        </div>
-
-
-    </div>
-
-
-    <div class="container artists_container">
-
-        <div class="row">
-
-            <h3 class="padding_media">Upcoming Artists</h3>
-
-            @foreach ($artists as $artist)
-
-                <div class="padding_left_40 col-sm-12 col-sm-6 col-md-4 col-lg-3" syle="display: inline;">
-
-                    <img width="250" height="360" src="images/artists/{{ $artist->artist_img }}"/>
-
-                    <p>{{ $artist->artist_name }}</p>
-
-                    <p>{{ $artist->artist_desc }}</p>
+                    <p>The xx is een driekoppige Engelse indieband, gevormd in Wandsworth, Londen in 2005. De drie brachten hun debuutalbum, xx, uit in augustus 2009. Het kwam op de eerste plaats van de "best of 2009"-lijst van The Guardian en op de tweede op die van NME.</p>
 
                 </div>
 
-            @endforeach
+            </div>
+
+            @include('bravoure/mobile-menu')
 
         </div>
 
-    </div>
+        {{--Mobile View Ends--}}
 
     </div>
+
+    @include('bravoure/artists')
 
 @endsection
 
@@ -125,7 +87,6 @@
     .menu_container {
         width: 100% !important;
     }
-
 
     a:hover {
         text-decoration-color: #F4A0A0 !important;
