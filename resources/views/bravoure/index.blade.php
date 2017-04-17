@@ -149,7 +149,7 @@
             background-image: url(images/menu_background.png);
             background-size: 60vw;
             background-repeat: no-repeat;
-            min-height: 607px;
+            min-height: 100%;
         }
 
         .padding-left-0 {
