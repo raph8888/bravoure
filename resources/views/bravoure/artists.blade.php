@@ -6,13 +6,21 @@
 
         @foreach ($artists as $artist)
 
-            <div class="padding_left_40 col-sm-12 col-sm-6 col-md-4 col-lg-3" syle="display: inline;">
+            <div class="artists_cols padding_left_40 col-sm-12 col-sm-6 col-md-4 col-lg-3" syle="display: inline;">
 
-                <img width="250" height="360" src="images/artists/{{ $artist->artist_img }}"/>
+                <img class="artists_img" width="250" height="360" src="images/artists/{{ $artist->artist_img }}"/>
 
-                <p>{{ $artist->artist_name }}</p>
+                <div style="max-width: 250px; margin-top: 12px;">
 
-                <p>{{ $artist->artist_desc }}</p>
+
+                    <p class="artists_name">{{ $artist->artist_name }}</p>
+
+                    <img class="more_info_img" src="images/more-info.png" width="20px">
+
+                </div>
+
+
+                <p class="artists_desc">{{ $artist->artist_desc }}</p>
 
             </div>
 
@@ -21,3 +29,29 @@
     </div>
 
 </div>
+
+<style>
+    .artists_img {
+        display: block;
+    }
+
+    .artists_cols {
+        margin-bottom: 40px;
+    }
+
+    .artists_name {
+        font-size: 17px;
+        display: inline;
+    }
+
+    .artists_desc {
+        color: #9d9d9d;
+        padding-top: 10px;
+    }
+
+    .more_info_img {
+        display: inline;
+        float: right;
+    }
+
+</style>
