@@ -52,13 +52,6 @@
 </div>
 
 <style>
-
-    #scrollable {
-        overflow: auto;
-        width:100%;
-        height:100%;
-    }
-
     #items {
         width: 90000px;
     }

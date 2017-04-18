@@ -113,6 +113,13 @@
             display: none;
         }
 
+        #scrollable {
+            overflow: auto;
+            width:100%;
+            height:100%;
+            margin: 0px 0px 0px 50px;
+        }
+
         a {
             color: white !important;
             text-decoration: none;
@@ -173,7 +180,7 @@
         }
 
         .padding_media {
-            padding-left: 15px;
+            padding-left: 59px;
             margin-bottom: 33px;
         }
 
@@ -188,6 +195,13 @@
         .menu_icon_img {
             padding-top: 18px;
             width: 28px;
+        }
+
+        #scrollable {
+            overflow: auto;
+            width:100%;
+            height:100%;
+            margin: 0px 0px 0px 10px;
         }
 
         .more-info-container-col{
@@ -293,7 +307,7 @@
         }
 
         .padding_media {
-            padding-left: 40px;
+            padding-left: 20px;
         }
 
         .padding_left_40 {
