@@ -178,6 +178,7 @@
 
         .padding_media {
             padding-left: 15px;
+            margin-bottom: 33px;
         }
 
     }
@@ -191,6 +192,11 @@
         .menu_icon_img {
             padding-top: 18px;
             width: 28px;
+        }
+
+        .more-info-container-col{
+            display: none;
+
         }
 
         .menu_rectangle {
