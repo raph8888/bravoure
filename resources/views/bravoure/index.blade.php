@@ -84,6 +84,16 @@
 
 <style>
 
+
+    @font-face {
+        font-family: Apercu Light;
+        src: url('{{ url('fonts/Apercu-Light.otf') }}');
+    }
+
+    body {
+        font-family: Apercu Light !important;
+    }
+
     .menu_container {
         width: 100% !important;
     }
