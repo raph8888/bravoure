@@ -151,10 +151,6 @@
             display: none;
         }
 
-        .artists_container {
-            margin-top: 50px;
-        }
-
         .menu_background {
             background-image: url(images/menu_background.png);
             background-size: 60vw;
