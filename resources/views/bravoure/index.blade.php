@@ -78,7 +78,7 @@
 
     </div>
 
-    @include('bravoure/artists')
+    @include('bravoure/artists2')
 
 @endsection
 
