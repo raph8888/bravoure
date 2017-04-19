@@ -86,6 +86,15 @@
 
 <style>
 
+    #scrollable {
+        overflow: auto;
+        width:100%;
+        height:100%;
+    }
+
+    .artists_container {
+        padding: 30px 0px 0px 50px;
+    }
 
     @font-face {
         font-family: Apercu Light;
@@ -113,13 +122,6 @@
 
         .mobile-view {
             display: none;
-        }
-
-        #scrollable {
-            overflow: auto;
-            width:100%;
-            height:100%;
-            margin: 0px 0px 0px 50px;
         }
 
         a {
@@ -178,11 +180,6 @@
             float: right;
         }
 
-        .padding_media {
-            padding-left: 59px;
-            margin-bottom: 33px;
-        }
-
     }
 
     /*
@@ -194,13 +191,6 @@
         .menu_icon_img {
             padding-top: 18px;
             width: 28px;
-        }
-
-        #scrollable {
-            overflow: auto;
-            width:100%;
-            height:100%;
-            margin: 0px 0px 0px 10px;
         }
 
         .more-info-container-col{
@@ -303,10 +293,6 @@
             padding-top: 20px;
             width: 90%;
             position: relative;
-        }
-
-        .padding_media {
-            padding-left: 20px;
         }
 
         .padding_left_40 {

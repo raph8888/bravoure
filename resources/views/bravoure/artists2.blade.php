@@ -1,6 +1,6 @@
 <div class="artists_container">
 
-        <h3 class="padding_media">Upcoming Artists</h3>
+        <h3>Upcoming Artists</h3>
 
 <div id="scrollable">
 <div id="items">
