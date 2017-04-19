@@ -169,7 +169,7 @@
         }
 
         .company_name {
-            font-size: 16vw;
+            font-size: 20vw;
             color: #F4A0A0;
             position: absolute;
             z-index: 3;
