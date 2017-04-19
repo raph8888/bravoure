@@ -151,11 +151,13 @@
         }
 
         .menu_description {
-            max-width: 300px;
+            max-width: 70%;
             display: block;
             margin-left: auto;
             margin-right: auto;
-            padding-top: 34vw;
+            margin-top: 87%;
+            font-size: 15px;
+            padding: 30px 0px 0px 40px;
         }
 
         .menu_description_mobile {
