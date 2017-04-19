@@ -10,9 +10,11 @@
 
         <div class="artists_cols more-info-container-col style="display: inline;">
 
-        <div class="more-info-container">
+       <a href="{{ url('/') }}">
+           <div class="more-info-container">
             <p class="more-info-desktop-text">More info</p>
         </div>
+       </a>
 
         <div style="max-width: 250px; margin-top: 12px;">
 
