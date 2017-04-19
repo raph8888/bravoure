@@ -18,14 +18,16 @@
 
             </div>
 
-            <div class="col-sm-12 col-sm-6 col-md-8 col-lg-7 padding-left-0">
+            <div class="col-sm-7 col-sm-7 col-md-7 col-lg-7 padding-left-0">
                 <div class="menu_background">
+                    <img class="menu_icon_img" src="images/menu_background.png"
+                         width="110%"/>
                 </div>
             </div>
+
             <span class="company_name">The XX</span>
 
-
-            <div class="col-sm-12 col-sm-6 col-md-4 col-lg-5">
+            <div class="col-sm-5 col-sm-5 col-md-5 col-lg-5">
                 <div class="menu_description">
 
                     <p>The xx is een driekoppige Engelse indieband, gevormd in Wandsworth, Londen in 2005. De drie brachten hun debuutalbum, xx, uit in augustus 2009. Het kwam op de eerste plaats van de "best of 2009"-lijst van The Guardian en op de tweede op die van NME.</p>
@@ -159,10 +161,7 @@
         }
 
         .menu_background {
-            background-image: url(images/menu_background.png);
-            background-size: 60vw;
             background-repeat: no-repeat;
-            min-height: 100%;
         }
 
         .padding-left-0 {
