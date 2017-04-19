@@ -1,6 +1,6 @@
 <div class="artists_container">
 
-        <h3>Upcoming Artists</h3>
+        <h3 class="padding-left-60">Upcoming Artists</h3>
 
 <div id="scrollable">
 <div id="items">
@@ -54,6 +54,7 @@
 <style>
     #items {
         width: 90000px;
+        padding-left: 50px;
     }
 
     .artists_cols {

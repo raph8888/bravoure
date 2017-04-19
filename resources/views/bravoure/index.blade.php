@@ -93,8 +93,12 @@
         padding-top: 30px;
     }
 
+    .padding-left-60 {
+        padding-left: 60px;
+    }
+
     .artists_container {
-        padding: 30px 0px 0px 50px;
+        padding: 30px 0px 0px 0px;
     }
 
     @font-face {
@@ -190,6 +194,10 @@
     ** This takes effect until the screen reaches above 900px
     */
     @media screen and (max-width: 900px) {
+
+        .more-info-desktop {
+            display: none;
+        }
 
         .menu_icon_img {
             padding-top: 18px;
