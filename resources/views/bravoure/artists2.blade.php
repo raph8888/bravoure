@@ -77,8 +77,10 @@
         position: absolute;
         color: white;
         font-size: 23px;
-        top: 44%;
+        top: 42%;
         left: 32%;
+        border-bottom: 3px solid #fff;
+        padding-bottom: 5px;
     }
 
     .artists_img {
