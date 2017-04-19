@@ -10,7 +10,7 @@
 
         <div class="artists_cols more-info-container-col style="display: inline;">
 
-       <a href="{{ url('/') }}">
+       <a href="{{ url('/bravoure') }}">
            <div class="more-info-container">
             <p class="more-info-desktop-text">More info</p>
         </div>
