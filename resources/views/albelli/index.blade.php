@@ -20,7 +20,7 @@
 
 <div class="image">
 
-    <input type="image" name="image" />
+    <input type="file" name="pic" accept="image/*">
 
 
 </div>
