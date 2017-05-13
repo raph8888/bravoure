@@ -5,12 +5,17 @@
 
 <div class="title">
 
+    <label>Title</label>
+
     <input type="text" name="title" />
 
 </div>
 
 
 <div class="content">
+
+    <label>Content</label>
+
 
     <input type="text" name="content" />
 
@@ -20,6 +25,9 @@
 
 <div class="image">
 
+    <label>Image</label>
+
+
     <input type="file" name="pic" accept="image/*">
 
 
@@ -27,6 +35,9 @@
 
 
 <div class="email">
+
+    <label>Email</label>
+
 
     <input type="email" name="password" />
 
