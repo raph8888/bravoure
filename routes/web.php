@@ -18,3 +18,4 @@ Route::get('/', function () {
 
 Route::get('bravoure', 'Bravoure@index');
 Route::get('albelli', 'Albelli@index');
+Route::post('sendform', 'Albelli@form');
