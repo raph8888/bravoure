@@ -24,7 +24,7 @@
             font-family: 'Raleway', sans-serif;
             font-weight: 100;
             height: 100vh;
-            margin: 0;
+            margin: 20px 10px 10px 30px;
         }
 
         .full-height {
