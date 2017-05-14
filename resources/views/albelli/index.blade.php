@@ -94,6 +94,9 @@
     <input type="email" name="email" required/>
 </div>
 
+    <br>
+    <br>
+
 <div class="submit">
 <input type="submit" value="Submit">
 </div>
