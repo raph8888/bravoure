@@ -68,46 +68,88 @@
 </head>
 <body>
 
-<h1>Albelli Assigment</h1>
+{{--<h1 style="text-align: center">Albelli Assigment</h1>--}}
 
-<form  id="testForm" method="post" class="form-horizontal" enctype='multipart/form-data'>
 
-<div class="title">
-    <label>Title</label><br>
-    <input type="text" name="title" required />
+<div class="container">
+    <div class="row">
+        <div class="col col-xs-12 col-sm-4 col-md-4">
+
+            <h2>Form</h2>
+
+            <form  id="testForm" method="post" class="form-horizontal" enctype='multipart/form-data'>
+
+                <div class="title input-container">
+                    <label>Title</label><br>
+                    <input type="text" name="title" required />
+                </div>
+
+                <div class="content input-container">
+                    <label>Content</label><br>
+                    <textarea rows="4" cols="20" type="text" name="content" required></textarea>
+                </div>
+
+                <div class="image input-container">
+                    <label>Image</label><br>
+                    <img id="blah" src="{{ url('images/albelli/default-placeholder.png') }}" alt="your image" width="150" height="150" />
+                    <input type="file" name="pic" class="pic_upload" accept="image/*" onchange="readURL(this);" required /><br>
+
+                </div>
+
+                <div class="email input-container">
+                    <label>Email</label><br>
+                    <input type="email" name="email" required/>
+                </div>
+
+                <br>
+                <br>
+
+                <div class="submit">
+                    <input type="submit" value="Submit">
+                </div>
+
+
+                <img src="{{ url('images/albelli/balls_loading.gif') }}" id="gif" style="width: 80px; visibility: hidden;">
+
+
+                <input type="hidden" name="_token" value="{{ csrf_token() }}">
+
+            </form>
+
+        </div>
+        <div class="col col-xs-12 col-sm-8 col-md-8">
+
+            <h2 style="text-align: center">Blog</h2>
+
+            <h2>
+            <?php
+            $file = File::get(base_path('public/title.txt'));
+            echo file_get_contents('title.txt');
+            ?>
+            </h2>
+
+            <h3>
+            <?php
+            $file = File::get(base_path('public/content.txt'));
+            echo file_get_contents('content.txt');
+            ?>
+            </h3>
+
+            <p>email:</p>
+            <?php
+            $file = File::get(base_path('public/email.txt'));
+            echo file_get_contents('email.txt');
+            ?>
+
+            <p>date:</p>
+            <?php
+            $file = File::get(base_path('public/date.txt'));
+            echo file_get_contents('date.txt');
+            ?>
+
+        </div>
+    </div>
 </div>
-
-<div class="content">
-    <label>Content</label><br>
-    <input type="text" name="content" required/>
-</div>
-
-<div class="image">
-    <label>Image</label><br>
-    <img id="blah" src="{{ url('images/albelli/default-placeholder.png') }}" alt="your image" />
-    <input type="file" name="pic" class="pic_upload" accept="image/*" onchange="readURL(this);" required /><br>
-
-</div>
-
-<div class="email">
-    <label>Email</label><br>
-    <input type="email" name="email" required/>
-</div>
-
-    <br>
-    <br>
-
-<div class="submit">
-<input type="submit" value="Submit">
-</div>
-
-
-    <img src="{{ url('images/albelli/balls_loading.gif') }}" id="gif" style="display: block; margin: 0 auto; width: 100px; visibility: hidden;">
-
-
-    <input type="hidden" name="_token" value="{{ csrf_token() }}">
-
-</form>
 
 </body>
 
@@ -121,8 +163,8 @@
             reader.onload = function (e) {
                 $('#blah')
                     .attr('src', e.target.result)
-                    .width(300)
-                    .height(300);
+                    .width(150)
+                    .height(150);
             };
 
             reader.readAsDataURL(input.files[0]);
@@ -163,5 +205,12 @@
 
     });
 
-
 </script>
+
+<style>
+
+    .input-container {
+        margin-bottom: 20px;
+    }
+
+</style>
