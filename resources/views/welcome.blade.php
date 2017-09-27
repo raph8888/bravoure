@@ -69,25 +69,23 @@
             @if (Route::has('login'))
                 <div class="top-right links">
                     @if (Auth::check())
-                        <a href="{{ url('/bravoure') }}">Bravoure</a>
+                        <a href="{{ url('/bravoure') }}">Home</a>
                     @else
-                        <a href="{{ url('/albelli') }}">Albelli</a>
-                        <a href="{{ url('/bravoure') }}">MessageBird</a>
+                        <a href="{{ url('/bravoure') }}">Login</a>
+                        <a href="{{ url('/bravoure') }}">Register</a>
                     @endif
                 </div>
             @endif
 
             <div class="content">
                 <div class="title m-b-md">
-                    Laravel
+                    Assignments
                 </div>
 
                 <div class="links">
-                    <a href="{{ url('/bravoure') }}">Documentatie</a>
-                    <a href="{{ url('/bravoure') }}">Laracasts</a>
-                    <a href="{{ url('/bravoure') }}">News</a>
-                    <a href="{{ url('/bravoure') }}">Forge</a>
-                    <a href="{{ url('/bravoure') }}">GitHub</a>
+                    <a href="{{ url('/bravoure') }}">Bravoure</a>
+                    <a href="{{ url('/albelli') }}">Albelli</a>
+                    <a href="{{ url('/messagebird') }}">MessageBird</a>
                 </div>
             </div>
         </div>
