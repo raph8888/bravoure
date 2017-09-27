@@ -171,24 +171,15 @@
         }
     }
 
-
     $(function () {
-
         $('form').on('submit', function (e) {
-
-
-
             var formData = new FormData($("#testForm")[0]);
             var ft = $('.pic_upload')[0].files[0];
             formData.append("fileToUpload", ft);
             console.log(ft);
             console.log(formData);
-
-
             e.preventDefault();
-
             $('#gif').css('visibility', 'visible');
-
             $.ajax({
                 type: 'post',
                 cache: false,
@@ -200,9 +191,7 @@
                     $('#gif').css('visibility', 'hidden');
                 }
             });
-
         });
-
     });
 
 </script>
