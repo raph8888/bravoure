@@ -25,9 +25,21 @@ class MessageBird extends Controller
 
 
         try {
-//            $result = ClientReportManager::generateOrdersReport(json_encode($_POST));
 
-            $result = json_encode($_POST);
+            $url = "http://localhost:8888/bravoure/public/handler/api/v1/MessageBirdHandler.php";
+            $_POST['action'] = 'send_sms';
+            $data_string = json_encode($_POST);
+
+            $ch = curl_init($url);
+            curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
+            curl_setopt($ch, CURLOPT_POSTFIELDS, $data_string);
+            curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+            curl_setopt($ch, CURLOPT_HTTPHEADER, array(
+                    'Content-Type: application/json',
+                    'Content-Length: ' . strlen($data_string))
+            );
+
+            $result = curl_exec($ch);
 
             // If we got here, all is good
             $output = array(
