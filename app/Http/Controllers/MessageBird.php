@@ -26,7 +26,7 @@ class MessageBird extends Controller
 
         try {
 
-            $url = "http://localhost:8888/bravoure/public/handler/api/v1/MessageBirdHandler.php";
+            $url = "http://www.raph-web.eu:4040/handler/api/v1/MessageBirdHandler.php";
             $_POST['action'] = 'send_sms';
             $data_string = json_encode($_POST);
 
