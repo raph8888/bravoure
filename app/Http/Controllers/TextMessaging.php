@@ -18,8 +18,10 @@ class TextMessaging extends Controller
     public function sms()
     {
         try {
-
-            $url = "http://localhost:8888/bravoure/public/handler/api/v1/MessageBirdHandler.php";
+            // production api url
+            $url = "http://www.raph-web.eu:4040/handler/api/v1/MessageBirdHandler.php";
+            // localhost api url
+            // $url = "http://localhost:8888/bravoure/public/handler/api/v1/MessageBirdHandler.php";
             $_POST['action'] = 'send_sms';
             $data_string = json_encode($_POST);
 
