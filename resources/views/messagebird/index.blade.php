@@ -24,30 +24,6 @@
             margin: 20px 10px 10px 30px;
         }
 
-        .full-height {
-            height: 100vh;
-        }
-
-        .flex-center {
-            align-items: center;
-            display: flex;
-            justify-content: center;
-        }
-
-        .position-ref {
-            position: relative;
-        }
-
-        .top-right {
-            position: absolute;
-            right: 10px;
-            top: 18px;
-        }
-
-        /*.content {*/
-        /*text-align: center;*/
-        /*}*/
-
         .links > a {
             color: #636b6f;
             padding: 0 25px;
@@ -57,17 +33,9 @@
             text-decoration: none;
             text-transform: uppercase;
         }
-
-        .m-b-md {
-            margin-bottom: 30px;
-        }
     </style>
 </head>
 <body>
-
-{{--<h1 style="text-align: center">Albelli Assigment</h1>--}}
-
-
 <div class="container">
     <div class="row">
         <div class="col col-xs-12 col-sm-5 col-md-5">
@@ -111,7 +79,6 @@
         'csrfToken' => csrf_token(),
     ]); ?>
 
-    $(function () {
         $('form').on('submit', function (e) {
             var data = $('#testForm').serialize();
             console.log(data);
@@ -125,30 +92,23 @@
 
                     if (data.success !== undefined && data.success == true) {
                         //stop loading animation
+                        alert(status);
                         $('#gif').css('visibility', 'hidden');
-
                         return false;
                     }
 
                     // If we got here, something went wrong.
-                    alert('Something went wrong and its probably Raphaels fault');
+                    alert('Something went wrong.');
                     //stop loading animation
                     $('#gif').css('visibility', 'hidden');
                     console.log(data);
                 },
                 error: function (jqXHR, status, errormsg) {
                     console.info(status + ':' + errormsg);
-                    alert('Something went wrong and its probably Raphaels fault');
+                    alert(errormsg);
                     $('#gif').css('visibility', 'hidden');
                 }
             });
         });
-    });
 
 </script>
-
-<style>
-    .input-container {
-        margin-bottom: 20px;
-    }
-</style>

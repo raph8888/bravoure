@@ -1,26 +1,37 @@
 <?php
 
+namespace v1;
+
 require_once(__DIR__ . '/../../../../vendor/autoload.php');
 
 use MessageBird\Client;
 use MessageBird\Objects\Message;
 
-// The (theoretical/imaginary) throughput to MessageBird is one API request per second.
-// Make sure the outgoing messages won’t exceed that limit when multiple incoming
-// requests are received at the API.
-sleep(1);
+try {
 
 //Make sure that it is a POST request.
 if (strcasecmp($_SERVER['REQUEST_METHOD'], 'POST') != 0) {
-    throw new Exception('Request method must be POST!');
+    throw new \Exception('Request method must be POST!');
 }
 
 //Make sure that the content type of the POST request has been set to application/json
 $contentType = isset($_SERVER["CONTENT_TYPE"]) ? trim($_SERVER["CONTENT_TYPE"]) : '';
 if (strcasecmp($contentType, 'application/json') != 0) {
-    throw new Exception('Content type must be: application/json');
+    throw new \Exception('Content type must be: application/json');
 }
 
+} catch (\Exception $e) {
+    // if an exception happened in the try block above
+    $output = array(
+        'success' => false,
+        'result' => 'Unknown',
+        'error' => $e->getMessage()
+    );
+
+    return $output;
+}
+
+//Handle JSon POST Request Using PHP.
 //Receive the RAW post data.
 $content = trim(file_get_contents("php://input"));
 
@@ -29,7 +40,7 @@ $decoded = json_decode($content, true);
 
 //If json_decode failed, the JSON is invalid.
 if (!is_array($decoded)) {
-    throw new Exception('Received content contained invalid JSON!');
+    throw new \Exception('Received content contained invalid JSON!');
 }
 
 $possible_actions = array("send_sms", "send_voice_message");
@@ -49,11 +60,11 @@ function send_sms($decoded)
     $message_body = $decoded["message"];
 
     if (empty($message_body)) {
-        throw new Exception('Empty messages are invalid');
+        throw new \Exception('Empty messages are invalid');
     }
 
-    if (strlen($decoded["originator"]) < 10) {
-        throw new Exception(sprintf('The number: %s is incorrect, it must have at least 10 characters', $decoded["originator"]));
+    if (strlen($decoded["recipient"]) < 10) {
+        throw new \Exception(sprintf('The number: %s is incorrect, it must have at least 10 characters', $decoded["originator"]));
     }
 
     $phone_number = applyCountryCode($decoded["recipient"]);
@@ -61,12 +72,6 @@ function send_sms($decoded)
     // When an incoming message content/body is longer than 160 chars,
     // split it into multiple parts (known as concatenated SMS)
     if (strlen($message_body) > 160) {
-
-        // The (theoretical/imaginary) throughput to MessageBird is one API request per second.
-        // Make sure the outgoing messages won’t exceed that limit,
-        // also when concatenated messages need to be send.
-        sleep(1);
-
         $total_message_parts = ceil(strlen($message_body) / 153);
         $character_index_start = 0;
 

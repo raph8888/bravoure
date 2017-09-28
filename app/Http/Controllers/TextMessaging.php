@@ -18,10 +18,9 @@ class TextMessaging extends Controller
     public function sms()
     {
         try {
-            // production api url
+            //api url
             $url = "http://www.raph-web.eu:4040/handler/api/v1/MessageBirdHandler.php";
-            // localhost api url
-            // $url = "http://localhost:8888/bravoure/public/handler/api/v1/MessageBirdHandler.php";
+
             $_POST['action'] = 'send_sms';
             $data_string = json_encode($_POST);
 
@@ -36,20 +35,22 @@ class TextMessaging extends Controller
 
             $result = curl_exec($ch);
 
-            // If we got here, all is good
+            if (!$result || !empty($result['error'])) {
+                throw new \Exception(sprintf('Something went wrong'));
+            }
+
             $output = array(
                 'success' => true,
-                'result' => $result
+                'result' => $result,
             );
-        } catch(NotEnoughDataException $e) {
+        } catch(\Exception $e) {
             $output = array(
-                'success' => true,
-                'result' => 'Onbekend'
+                'success' => false,
+                'result' => 'Unknown',
+                'error' => $e->getMessage()
             );
-        } catch(Exception $e) {
-            $output = array('error' => $e->getMessage() . "\n\n" . $e->getTraceAsString());
         }
-        $this->arrayToJSONAndExit($output);
+        $this->arrayToJSONAndExit($output, true);
     }
 
     public function clean_input($data) {
@@ -62,7 +63,7 @@ class TextMessaging extends Controller
     }
 
     /**
-     * Output an array as JSON, with the appropiate headers and utilzing the page load timer.
+     * Output an array as JSON, with the appropriate headers and utilizing the page load timer.
      *
      * @param array $output a multi-nested array with data
      * @return void
