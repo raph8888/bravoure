@@ -7,9 +7,7 @@ class Bravoure extends Controller
 {
     public function index()
     {
-
         $artists = Artist::all();
-
         return view('bravoure/index',
             [
                 'artists' => $artists

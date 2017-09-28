@@ -1,14 +1,10 @@
 <?php
 namespace App\Http\Controllers;
-use Illuminate\Http\Request;
-use App\Artist;
 
-class MessageBird extends Controller
+class TextMessaging extends Controller
 {
     const EMAIL_OWNER = 'raph@raph-web.com';
-
     public $greetings = 'hello world';
-    public $image_type = Array(1 => 'jpg', 2 => 'jpeg', 3 => 'png');
 
     public function index()
     {
@@ -19,14 +15,11 @@ class MessageBird extends Controller
         );
     }
 
-
     public function sms()
     {
-
-
         try {
 
-            $url = "http://www.raph-web.eu:4040/handler/api/v1/MessageBirdHandler.php";
+            $url = "http://localhost:8888/bravoure/public/handler/api/v1/MessageBirdHandler.php";
             $_POST['action'] = 'send_sms';
             $data_string = json_encode($_POST);
 
@@ -49,7 +42,7 @@ class MessageBird extends Controller
         } catch(NotEnoughDataException $e) {
             $output = array(
                 'success' => true,
-                'represultort' => 'Onbekend'
+                'result' => 'Onbekend'
             );
         } catch(Exception $e) {
             $output = array('error' => $e->getMessage() . "\n\n" . $e->getTraceAsString());

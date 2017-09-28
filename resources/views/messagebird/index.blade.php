@@ -10,11 +10,6 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
           integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.form/3.51/jquery.form.min.js"></script>
-
-
-    <link class="jsbin" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1/themes/base/jquery-ui.css"
-          rel="stylesheet" type="text/css"/>
     <script class="jsbin" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
     <script class="jsbin" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.0/jquery-ui.min.js"></script>
 
@@ -78,7 +73,7 @@
         <div class="col col-xs-12 col-sm-5 col-md-5">
         </div>
         <div class="col col-xs-12 col-sm-3 col-md-3">
-            <h2>Fill me</h2>
+            <h2>Message Bird <br> SMS Form</h2>
             <br>
             <form id="testForm" method="post" class="form-horizontal" enctype='multipart/form-data'>
                 <div class="title input-container">
@@ -139,10 +134,7 @@
                     alert('Something went wrong and its probably Raphaels fault');
                     //stop loading animation
                     $('#gif').css('visibility', 'hidden');
-
                     console.log(data);
-
-                    $('#gif').css('visibility', 'hidden');
                 },
                 error: function (jqXHR, status, errormsg) {
                     console.info(status + ':' + errormsg);
