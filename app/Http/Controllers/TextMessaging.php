@@ -13,7 +13,7 @@ class TextMessaging extends Controller
     {
         try {
             //api url
-            $url = "http://www.raph-web.eu:4040/handler/api/v1/MessageBirdHandler.php";
+            $url = "http://www.raph-web.eu:2020";
 
             $data_string = json_encode($_POST);
 
