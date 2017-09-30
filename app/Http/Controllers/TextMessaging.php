@@ -19,9 +19,10 @@ class TextMessaging extends Controller
     {
         try {
             //api url
-            $url = "http://www.raph-web.eu:4040/handler/api/v1/MessageBirdHandler.php";
+//            $url = "http://www.raph-web.eu:4040/handler/api/v1/MessageBirdHandler.php";
+            //local host url
+             $url = "http://localhost:8888/bravoure/public/handler/api/v1/MessageBirdHandler.php";
 
-            $_POST['action'] = 'send_sms';
             $data_string = json_encode($_POST);
 
             $ch = curl_init($url);
@@ -35,8 +36,9 @@ class TextMessaging extends Controller
 
             $result = curl_exec($ch);
 
-            if (!$result || !empty($result['error'])) {
-                throw new \Exception(sprintf('Something went wrong'));
+            $decoded_values = json_decode($result, true);
+            if (!$result || !empty($decoded_values['error'])) {
+                throw new \Exception($decoded_values['error']);
             }
 
             $output = array(
