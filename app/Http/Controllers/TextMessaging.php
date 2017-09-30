@@ -19,9 +19,7 @@ class TextMessaging extends Controller
     {
         try {
             //api url
-//            $url = "http://www.raph-web.eu:4040/handler/api/v1/MessageBirdHandler.php";
-            //local host url
-             $url = "http://localhost:8888/bravoure/public/handler/api/v1/MessageBirdHandler.php";
+            $url = "http://www.raph-web.eu:4040/handler/api/v1/MessageBirdHandler.php";
 
             $data_string = json_encode($_POST);
 
