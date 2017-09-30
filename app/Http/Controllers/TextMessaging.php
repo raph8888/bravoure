@@ -3,16 +3,10 @@ namespace App\Http\Controllers;
 
 class TextMessaging extends Controller
 {
-    const EMAIL_OWNER = 'raph@raph-web.com';
-    public $greetings = 'hello world';
 
     public function index()
     {
-        return view('messagebird/index',
-            [
-                'greetings' => $this->greetings
-            ]
-        );
+        return view('messagebird/index');
     }
 
     public function sms()
@@ -35,7 +29,10 @@ class TextMessaging extends Controller
             $result = curl_exec($ch);
 
             $decoded_values = json_decode($result, true);
-            if (!$result || !empty($decoded_values['error'])) {
+            if (!$result) {
+                throw new \Exception('No response from the API');
+            }
+            if (!empty($decoded_values['error'])) {
                 throw new \Exception($decoded_values['error']);
             }
 
@@ -51,15 +48,6 @@ class TextMessaging extends Controller
             );
         }
         $this->arrayToJSONAndExit($output, true);
-    }
-
-    public function clean_input($data) {
-
-        $data = trim($data);
-        $data = stripslashes($data);
-        $data = htmlspecialchars($data);
-        return $data;
-
     }
 
     /**

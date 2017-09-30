@@ -1,7 +1,5 @@
 <?php
-namespace v1\MessageBirdApiController;
-
-require_once(__DIR__ . '/../../../../vendor/autoload.php');
+namespace App;
 
 use MessageBird\Client;
 use MessageBird\Objects\Message;
@@ -9,15 +7,14 @@ use MessageBird\Objects\Message;
 /**
  * Service to send Text messages using MessageBird's API
  */
-class MessageBirdApiController
+class Texting
 {
     private $client;
     private $originator;
 
-    function __construct()
+    public function __construct()
     {
         $this->client = new Client('7pgSx0IlPkp4nVpkgAVGv8KLo');
-        $this->originator = 'MessageBird';
     }
 
     public function send($values)
@@ -25,7 +22,7 @@ class MessageBirdApiController
         // Validation
         $phone_number = $this->validatePhone($values["recipient"]);
         $message_body = $this->validateMessage($values["message"]);
-        $originator = $this->validateOriginator($values["originator"]);
+        $this->validateOriginator($values["originator"]);
 
         $response = '';
 
@@ -37,11 +34,11 @@ class MessageBirdApiController
                 $message_part = substr($message_body, $character_index_start, 153);
                 $character_index_start += 153;
                 $message_url_encoded = urlencode($message_part);
-                $response = $this->callMessageBird($originator, $phone_number, $message_url_encoded);
+                $response = $this->callMessageBird($phone_number, $message_url_encoded);
             }
         } else {
             $message = urlencode($message_body);
-            $response = $this->callMessageBird($originator, $phone_number, $message);
+            $response = $this->callMessageBird($phone_number, $message);
         }
 
         return $response;
@@ -77,14 +74,14 @@ class MessageBirdApiController
         if (empty($originator)) {
             throw new \Exception('Empty originator is invalid');
         }
-        return $originator;
+        $this->originator = $originator;
     }
 
-    function callMessageBird($originator, $phone_number, $message)
+    function callMessageBird($phone_number, $message)
     {
 
         $Message = new Message();
-        $Message->originator = $originator;
+        $Message->originator = $this->originator;
         $Message->recipients = $phone_number;
         $Message->body = $message;
         $response = $this->client->messages->create($Message);
@@ -92,4 +89,3 @@ class MessageBirdApiController
         return $response;
     }
 }
-
